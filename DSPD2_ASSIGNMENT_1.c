@@ -17,7 +17,6 @@ typedef struct Node_Group{
     int group_size;
     char group_name[100];
     int Weekly_Group_Goal;
-   //int * member_id;
     Node_Individual ** individuals;
     struct Node_Group *next;
 }Node_Group;
@@ -224,7 +223,7 @@ void writeToFile(FILE *file, Node_Individual *node) {
 
 
 void writeGroupToFile(Node_Group *node) {
-    FILE *file = fopen("d.txt", "w");
+    FILE *file = fopen("dspd_file_group.txt", "w");
     if (file == NULL) {
         perror("Error opening file");
         exit(EXIT_FAILURE);
@@ -613,7 +612,6 @@ int Get_Rank(LeaderboardNode *leaderboardHead, const char *group_name) {
         currentLeader = currentLeader->next;
     }
 
-    // Return -1 or any other value to indicate that the group name was not found
     return -1;
 }
 
@@ -1080,3 +1078,4 @@ int main() {
 
     return 0;
 }
+
