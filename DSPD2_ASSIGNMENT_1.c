@@ -304,7 +304,7 @@ Node_Individual * Add_Person(Node_Individual *node){
 
     printf("Individual added Successfully!\n");
 
-    FILE *file = fopen("dspd_file.txt", "w");
+    FILE *file = fopen("dspd_file_individual.txt", "w");
     if (file == NULL) {
         perror("Error opening file");
         exit(EXIT_FAILURE);
@@ -723,7 +723,7 @@ Node_Individual *Delete_individual(Node_Individual *headIndividual, Node_Group *
         free(curr);
     }
 
-    FILE *file = fopen("dspd_file.txt", "w");
+    FILE *file = fopen("dspd_file_individual.txt", "w");
     if (file == NULL) {
         perror("Error opening file");
         exit(EXIT_FAILURE);
@@ -942,7 +942,7 @@ Node_Group* Merge_groups(Node_Group* groupList, int Group_ID_1, int Group_ID_2) 
 
 
 int main() {
-    FILE *file = fopen("dspd_file.txt", "r");
+    FILE *file = fopen("dspd_file_individual.txt", "r");
     if (file == NULL) {
         perror("Error opening file");
         return 1;
@@ -951,7 +951,7 @@ int main() {
    Node_Individual * headIndividual=readFromIndividualFile(file,headIndividual);
 
 
-    FILE *file2 = fopen("d.txt", "r");
+    FILE *file2 = fopen("dspd_file_group.txt", "r");
     if (!file2) {
         perror("Error opening file");
         return EXIT_FAILURE;
