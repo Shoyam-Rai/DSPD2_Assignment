@@ -290,8 +290,8 @@ void Add_Person(){
     if (isIdExist( nodeToInsert->id)==1) {
         printf("Error: ID already exists. Please choose a different ID.\n");
         free(nodeToInsert);
-        
-    }
+        exit(EXIT_FAILURE);
+         }
     printf("Enter name:\n");
     scanf("%s",&nodeToInsert->name);
     printf("Enter age:\n");
@@ -347,6 +347,7 @@ void Create_Group() {
     if (isIdExistGroup( groupToInsert->group_id)==1) {
         printf("Error: ID already exists. Please choose a different ID.\n");
         free(groupToInsert);
+        exit(EXIT_FAILURE);
         
     }
     printf("Enter group_size:\n");
@@ -1067,4 +1068,3 @@ int main() {
 
     return 0;
 }
-
